@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% block title %}Heart Test {% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heart Attack Prediction</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-
-<body>
-    <header>
-        <a href="{{ url_for('home') }}"><button>Back</button></a>
-        
-    </header>
-    <main>
-       
-        <div class="box2">
+{% block content %}
+<div class="box2">
             <h1>HEART'S DATA</h1>
             <p>input your data</p>
             <form action="/heart_attack", method="post">
@@ -136,8 +123,7 @@
                     {% endif %}
                 </label>
             </form>
-        </div>
-    </main>
-</body>
+</div>
+{% endblock %}
 
-</html> 
+
