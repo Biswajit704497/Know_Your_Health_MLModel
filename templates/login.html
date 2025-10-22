@@ -8,15 +8,22 @@
         <h2>LOGIN</h2>
         <p>Please enter your login and password!</p>
         <form method="post" action="/login">
-            <input type="text" placeholder="Username" name="username"><br><br>
+            <input type="text" placeholder="Username" name="username">
             
             <input id="password" type="password" placeholder="Password" name="password">
            
             <br>
-            <a href="#">Forgot password?</a><br><br>
+           
             <button type="submit" class=" btn btn-hero btn-lg rounded-pill px-4 btn-outline-light">Login</button>
         </form>
+
+            <div class="register-section" style="text-align:center; margin-top:16px;">
+        <p>Don't have an account?</p>
+        <a href="{{ url_for('register_bp.register' ) }}" class="btn btn-hero btn-lg rounded-pill px-4 btn-outline-light">Register</a>
+    </div>
     
     </div>
+
+
 </section>
 {%endblock%}

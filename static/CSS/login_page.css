@@ -10,6 +10,7 @@ body {
 
 }
 
+
 /* optional animation for smooth RGB transition */
 /* @keyframes rgbMove {
   0% {
@@ -21,16 +22,16 @@ body {
 } */
 
 .login-box {
-   
+   margin: 3rem 1rem;
   background-color: rgba(0, 0, 0, 0.85);
-  padding: 40px;
+  padding: 32px;
   border-radius: 15px;
   text-align: center;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
   color: #fff;
-  width: 500px;
-  height: 500px;
-
+  width: 100%;
+  max-width: 520px;
+  height: auto;
 }
 
 form{
@@ -40,42 +41,49 @@ form{
 }
 form input{
     text-align: center;
-   
-    width: 85%;
-    font-size: 1.1rem;
+    width: 100%;
+    max-width: 420px;
+    font-size: 1rem;
     border: none;
     outline: none;
-    padding: 8px 15px;
+    padding: 10px 14px;
     background: transparent;
-    
-    
     color: white;
-
-  border: 3px solid transparent;
-  border-image: linear-gradient(90deg, #ff3c3c, #7d00ff, #0026ff);
-  border-image-slice: 1;
-  background-color: transparent;
-  border-radius: 30px;
+    border: 2px solid transparent;
+    border-image: linear-gradient(90deg, #ff3c3c, #7d00ff, #0026ff);
+    border-image-slice: 1;
+    background-color: transparent;
+    border-radius: 30px;
+    display: block;
+    margin: 0.45rem auto;
 }
 input::placeholder {
   color: #aaa;
 }
 form .button{
-    margin-top: 20px;
-    padding: 5px 80px; 
-    font-size: 1.2rem;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    color: #fff;
-    /* background: linear-gradient(90deg, #ff3c3c, #7d00ff, #0026ff);  */
-    border-radius: 20px;
-    border: 3px solid transparent;
-    background: transparent;
-    border: 2px solid white;
+  margin-top: 18px;
+  padding: 10px 36px; 
+  font-size: 1.05rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff3c3c, #7d00ff, #0026ff);
+  border: 0;
+  display: inline-block;
+}
 
+/* Make inputs and button full width on small screens */
+@media (max-width: 420px){
+  .login-box{ padding: 18px; margin: 2rem .5rem; }
+  form input{ max-width: 100%; }
+  form .button{ width: 100%; padding: 10px 12px; }
+}
 
-  }
+@media (max-width: 768px){
+  .login-box{ margin: 2.5rem 1rem; }
+}
   
 
  

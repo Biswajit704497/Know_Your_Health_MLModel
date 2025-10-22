@@ -4,6 +4,7 @@ login_bp = Blueprint('login_bp',__name__)
 
 @login_bp.route('/login', methods=['GET','POST'])
 def login():
+  
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
@@ -12,11 +13,13 @@ def login():
         cur.execute("SELECT * FROM user WHERE username=%s AND password=%s", (username, password))
         user = cur.fetchone()
         cur.close()
-
+        # if already logged in, redirect to home
+        if session.get("user"):
+            return redirect(url_for('main_bp.home'))
         if user:
-            session["user_id"] = username
+            session["user"] = username
             print("Login successful!", "success")
-            return "wellcome"
+            return redirect(url_for('main_bp.home'))
         else:
             print("Invalid username or password", "danger")
     return render_template('login.html')    

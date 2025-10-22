@@ -4,6 +4,7 @@ from routes.main_routes import main_bp
 from routes.bmi_routes import bmi_bp
 from routes.heart_routes import heart_bp
 from routes.login_routes import login_bp
+from routes.register_route import register_bp
 import os
 
 app = Flask(__name__)
@@ -15,7 +16,8 @@ app.register_blueprint(main_bp)
 app.register_blueprint(heart_bp)
 app.register_blueprint(bmi_bp)
 app.register_blueprint(login_bp)
+app.register_blueprint(register_bp)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port, debug=False)
+    app.run(host="0.0.0.0", port=port, debug=True)
