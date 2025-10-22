@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request
-from heart_model import heart_def
+from models.heart_model import heart_def
 
 heart_bp = Blueprint('heart_bp', __name__)
 

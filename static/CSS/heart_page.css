@@ -1,20 +1,6 @@
 /* Page-level background and form styles (hero-like) */
-:root{
-    --page-bg-1: #0f1720; /* near black-blue */
-    --page-bg-2: #111827; /* dark slate */
-    --accent-start: #0ea5e9;
-    --accent-end: #7c3aed;
-    --card-bg: rgba(255,255,255,0.03);
-    --card-border: rgba(255,255,255,0.06);
-    --text-soft: #cbd5e1;
-}
 
-body {
-    background: radial-gradient(1200px 600px at 10% 10%, rgba(59,130,246,0.06), transparent 20%),
-                radial-gradient(900px 400px at 90% 80%, rgba(124,58,237,0.06), transparent 10%),
-                linear-gradient(180deg, var(--page-bg-1), var(--page-bg-2));
-    color: var(--text-soft);
-}
+
 
 /* A centered card style for pages that need a form */
 .box2{
@@ -99,3 +85,4 @@ body {
         padding: 1.25rem;
     }
 }
+

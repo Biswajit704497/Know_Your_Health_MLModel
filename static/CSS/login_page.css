@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #ff3c3c, #7d00ff, #0026ff);
+  background-size: 300% 300%;
+  animation: rgbMove 6s infinite alternate;
+
+}
+
+/* optional animation for smooth RGB transition */
+/* @keyframes rgbMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+} */
+
+.login-box {
+   
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  width: 500px;
+  height: 500px;
+
+}
+
+form{
+
+    margin-top: 30px;
+    
+}
+form input{
+    text-align: center;
+   
+    width: 85%;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    padding: 8px 15px;
+    background: transparent;
+    
+    
+    color: white;
+
+  border: 3px solid transparent;
+  border-image: linear-gradient(90deg, #ff3c3c, #7d00ff, #0026ff);
+  border-image-slice: 1;
+  background-color: transparent;
+  border-radius: 30px;
+}
+input::placeholder {
+  color: #aaa;
+}
+form .button{
+    margin-top: 20px;
+    padding: 5px 80px; 
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    /* background: linear-gradient(90deg, #ff3c3c, #7d00ff, #0026ff);  */
+    border-radius: 20px;
+    border: 3px solid transparent;
+    background: transparent;
+    border: 2px solid white;
+
+
+  }
+  
+
+ 

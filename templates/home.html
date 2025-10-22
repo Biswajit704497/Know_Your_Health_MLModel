@@ -3,262 +3,138 @@
 {% block title %} Home {% endblock %}
 {% block content %}
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="hero-background">
-            <div class="floating-icon floating-icon-1">
-                <i class="bi bi-heart-fill"></i>
-            </div>
-            <div class="floating-icon floating-icon-2">
-                <i class="bi bi-activity"></i>
-            </div>
-            <div class="floating-icon floating-icon-3">
-                <i class="bi bi-shield-fill"></i>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row min-vh-100 align-items-center">
-                <div class="col-12 text-center text-white">
-                    <h1 class="display-2 fw-bold mb-4 fade-in">
-                        Your Health,<br>
-                        <span class="hero-gradient-text">Predicted & Protected</span>
-                    </h1>
-                    <p class="lead mb-5 px-lg-5 fade-in-delay">
-                        Advanced AI-powered health predictions to help you make informed decisions about your wellbeing
-                    </p>
+<!-- Hero Section -->
+<section id="home" class="hero-section">
 
-                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center fade-in-delay-2">
-                        <a href="#services">
-                            <button class="btn btn-hero btn-lg rounded-pill px-4">
-                                <i class="bi bi-play-circle me-2"></i>
-                                Start Health Check
-                            </button>
-                        </a>
-                        <a href="" class="text-decoration-none text-white">
-                            <button class="btn btn-outline-light btn-lg rounded-pill px-4">
-                                Chat Bot 
-                                 <i class="fa-solid fa-robot"></i>
-                            </button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-4 fw-bold text-primary mb-4">Available Health Services</h2>
-                <p class="lead text-muted mb-4">
-                    Choose from our comprehensive suite of health prediction tools designed to help you understand your
-                    health better
+    <div class="container">
+        <div class="row min-vh-100 align-items-center">
+            <div class="col-12 text-center text-white">
+                <h1 class="display-2 fw-bold mb-4 fade-in">
+                    Your Health,<br>
+                    <span class="hero-gradient-text">Predicted & Protected</span>
+                </h1>
+                <p class="lead mb-5 px-lg-5 fade-in-delay">
+                    Advanced AI-powered health predictions to help you make informed decisions about your wellbeing
                 </p>
 
-                <div class="d-inline-block p-3 bg-success bg-opacity-10 rounded">
-                    <span class="h3 fw-bold text-primary">6</span>
-                    <span class="text-muted ms-2">Services Available</span>
+                <div
+                    class="d-flex flex-column flex-sm-row gap-3 justify-content-center fade-in-delay-2 start_health_check">
+                    <a href="{{ url_for('login_bp.login' ) }}" class="text-decoration-none text-white">
+                        <button class="btn btn-hero btn-lg rounded-pill px-4 btn-outline-light">
+                            <i class="bi bi-play-circle me-2"></i>
+                            Start Health Check
+                        </button>
+                    </a>
+                    <a href="" class="text-decoration-none text-white">
+                        <button class="btn btn-outline-light btn-lg rounded-pill px-4">
+                            Chat Bot
+                            <i class="fa-solid fa-robot"></i>
+                        </button>
+                    </a>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<!-- Services Section -->
+<section id="services" class="py-5 bg-light">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2 class="display-4 fw-bold text-primary mb-4 text-dark ">Available Health Services</h2>
+            <p class="lead text-muted mb-4 ">
+                Choose from our comprehensive suite of health prediction tools designed to help you understand your
+                health better
+            </p>
+
+            <div class="d-inline-block p-3 bg-success bg-opacity-10 rounded">
+                <span class="h3 fw-bold text-primary">0</span>
+                <span class="text-muted ms-2">Services Available</span>
             </div>
 
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <a href="{{ url_for('bmi_bp.BMI' ) }}" class="text-decoration-none">
-                        <div class="service-card h-100" >
-                            <div class=" card-body d-flex">
-                            <div class="service-icon bg-primary me-3">
-                                <i class="bi bi-calculator"></i>
-                            </div>
-                            <div>
-                                <h5 class="card-title">BMI Calculator</h5>
-                                <p class="card-text text-muted">Calculate your Body Mass Index and get personalized
+        </div>
+
+
+        <div class="services-grid">
+            <div class="card  card-hover" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='img/service/bmi.png') }}" class="card-img-top img-fluid" alt="BMI">
+                <div class="card-body">
+                    <h5 class="card-title ">BMI</h5>
+                    <p class="card-text ">Calculate your Body Mass Index and get personalized
                                     health recommendations</p>
-                            </div>
-                        </div>
-                </div>
-                </a>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <a href="{{ url_for('heart_bp.heart_attack' ) }}" class="text-decoration-none">
-                    <div class="service-card h-100 d-block text-decoration-none text-reset">
-                        <div class="card-body d-flex">
-                        <div class="service-icon bg-danger me-3">
-                            <i class="bi bi-heart"></i>
-                        </div>
-                        <div>
-                            <h5 class="card-title">Heart Attack Analysis</h5>
-                            <p class="card-text text-muted">Monitor and analyze your heart rate patterns for
-                                cardiovascular health insights</p>
-                        </div>
-                    </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="service-card h-100" onclick="openService('blood-pressure')">
-                    <div class="card-body d-flex">
-                        <div class="service-icon bg-warning me-3">
-                            <i class="bi bi-activity"></i>
-                        </div>
-                        <div>
-                            <h5 class="card-title">Blood Pressure Assessment</h5>
-                            <p class="card-text text-muted">Track your blood pressure and understand your cardiovascular
-                                risk factors</p>
-                        </div>
-                    </div>
+                    <a href="{{ url_for('bmi_bp.BMI' ) }}" class="btn btn-primary">Check it out</a>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="service-card h-100" onclick="openService('diabetes')">
-                    <div class="card-body d-flex">
-                        <div class="service-icon bg-info me-3">
-                            <i class="bi bi-droplet"></i>
-                        </div>
-                        <div>
-                            <h5 class="card-title">Diabetes Risk Assessment</h5>
-                            <p class="card-text text-muted">Evaluate your diabetes risk based on lifestyle and health
-                                indicators</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="service-card h-100" onclick="openService('sleep')">
-                    <div class="card-body d-flex">
-                        <div class="service-icon bg-success me-3">
-                            <i class="bi bi-moon"></i>
-                        </div>
-                        <div>
-                            <h5 class="card-title">Sleep Quality Analysis</h5>
-                            <p class="card-text text-muted">Analyze your sleep patterns and get recommendations for
-                                better rest</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="service-card h-100" onclick="openService('stress')">
-                    <div class="card-body d-flex">
-                        <div class="service-icon bg-primary me-3">
-                            <i class="bi bi-brain"></i>
-                        </div>
-                        <div>
-                            <h5 class="card-title">Stress Level Assessment</h5>
-                            <p class="card-text text-muted">Measure your stress levels and discover coping strategies
-                            </p>
-                        </div>
-                    </div>
+            <div class="card  card-hover" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='img/image.png') }}" class="card-img-top img-fluid" alt="Heart Health">
+                <div class="card-body">
+                    <h5 class="card-title">Heart Attack Analysis</h5>
+                    <p class="card-text">Monitor and analyze your heart rate patterns for cardiovascular health insights  </p>
+                    <a href="" class="btn btn-primary">Check it out</a>
                 </div>
             </div>
         </div>
-        </div>
-    </section>
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-4 fw-bold text-primary mb-4">How It Works</h2>
-                <p class="lead text-muted">Our simple 4-step process makes health prediction accessible and actionable
-                </p>
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section id="how-it-works" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-4 fw-bold text-primary mb-4">How It Works</h2>
+            <p class="lead text-muted">Our simple 4-step process makes health prediction accessible and actionable
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="how-it-works-card">
+                    <div class="step-icon bg-gradient-primary">
+                        <i class="bi bi-clipboard-data"></i>
+                    </div>
+                    <h5 class="fw-bold mt-3">Input Your Data</h5>
+                    <p class="text-muted">Provide your health information through our secure, easy-to-use forms</p>
+                </div>
             </div>
 
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="how-it-works-card">
-                        <div class="step-icon bg-gradient-primary">
-                            <i class="bi bi-clipboard-data"></i>
-                        </div>
-                        <h5 class="fw-bold mt-3">Input Your Data</h5>
-                        <p class="text-muted">Provide your health information through our secure, easy-to-use forms</p>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="how-it-works-card">
+                    <div class="step-icon bg-gradient-primary">
+                        <i class="bi bi-cpu"></i>
                     </div>
+                    <h5 class="fw-bold mt-3">AI Analysis</h5>
+                    <p class="text-muted">Our advanced algorithms analyze your data using medical research and
+                        patterns</p>
                 </div>
+            </div>
 
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="how-it-works-card">
-                        <div class="step-icon bg-gradient-primary">
-                            <i class="bi bi-cpu"></i>
-                        </div>
-                        <h5 class="fw-bold mt-3">AI Analysis</h5>
-                        <p class="text-muted">Our advanced algorithms analyze your data using medical research and
-                            patterns</p>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="how-it-works-card">
+                    <div class="step-icon bg-gradient-primary">
+                        <i class="bi bi-graph-up"></i>
                     </div>
+                    <h5 class="fw-bold mt-3">Get Predictions</h5>
+                    <p class="text-muted">Receive accurate health predictions and risk assessments</p>
                 </div>
+            </div>
 
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="how-it-works-card">
-                        <div class="step-icon bg-gradient-primary">
-                            <i class="bi bi-graph-up"></i>
-                        </div>
-                        <h5 class="fw-bold mt-3">Get Predictions</h5>
-                        <p class="text-muted">Receive accurate health predictions and risk assessments</p>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="how-it-works-card">
+                    <div class="step-icon bg-gradient-primary">
+                        <i class="bi bi-shield-check"></i>
                     </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="how-it-works-card">
-                        <div class="step-icon bg-gradient-primary">
-                            <i class="bi bi-shield-check"></i>
-                        </div>
-                        <h5 class="fw-bold mt-3">Take Action</h5>
-                        <p class="text-muted">Get personalized recommendations to improve your health outcomes</p>
-                    </div>
+                    <h5 class="fw-bold mt-3">Take Action</h5>
+                    <p class="text-muted">Get personalized recommendations to improve your health outcomes</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- About Section -->
-    <section id="about" class="py-5 bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="row g-3">
-                        <div class="col-6">
-                            <div class="stat-card text-center">
-                                <i class="bi bi-people-fill text-primary mb-2"></i>
-                                <div class="h4 fw-bold">50K+</div>
-                                <small class="text-muted">Users Helped</small>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="stat-card text-center">
-                                <i class="bi bi-award-fill text-primary mb-2"></i>
-                                <div class="h4 fw-bold">95%</div>
-                                <small class="text-muted">Accuracy Rate</small>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="stat-card text-center">
-                                <i class="bi bi-globe text-primary mb-2"></i>
-                                <div class="h4 fw-bold">24/7</div>
-                                <small class="text-muted">Available</small>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="stat-card text-center">
-                                <i class="bi bi-heart-fill text-primary mb-2"></i>
-                                <div class="h4 fw-bold">100%</div>
-                                <small class="text-muted">Privacy Focused</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- About Section -->
 
 
-            </div>
-        </div>
-    </section>
-
-    {% endblock %}
-
-
-
-    
+{% endblock %}
