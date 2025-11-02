@@ -4,7 +4,7 @@ def BMI_def(height, weight):
     bmi = weight /(height_m ** 2)
     bmi = round(bmi,2)
     bmi_list.append(bmi)    
-    # print(weight, height)
+    print(weight, height)
         
     if bmi < 18.5:
          category = "Underweight"
