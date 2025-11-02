@@ -9,12 +9,12 @@
         <p>Please enter your details to create a new account</p>
         <form method="post" action="/register">
             
-            <input type="email" placeholder="Email" name="email" >
-            <input type="number" placeholder="Phone Number" name="phone_number">
-            <input type="text" placeholder="Full Name" name="full_name">
-              <input type="text" placeholder="Username" name="username">
-            <input id="password" type="password" placeholder="Password" name="password">
-           
+            <input type="email" placeholder="Email" name="email" required>
+            <input type="number" placeholder="Phone Number" name="phone_number" required>
+            <input type="text" placeholder="Full Name" name="full_name" required>
+              <input type="text" placeholder="Username" name="username" required>
+            <input id="password" type="password" placeholder="Password" name="password" required>
+
             <br>
            
             <button type="submit" class="btn btn-hero btn-lg rounded-pill px-4 btn-outline-light mt-3">Register</button>
