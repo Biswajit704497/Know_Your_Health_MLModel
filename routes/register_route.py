@@ -18,6 +18,7 @@ def register():
             username,
             password
         )
+        
         sql_query = """
             INSERT INTO user(email,phone_number,fullname,username,password)
             VALUES(%s, %s, %s , %s , %s )
