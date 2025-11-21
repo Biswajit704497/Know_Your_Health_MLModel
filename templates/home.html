@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+{% block content %}
+
+
+<div id="flash-popup-container">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="flash-popup {{ category }}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+</div>
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+
+    <div class="container">
+        <div class="row min-vh-100 align-items-center">
+            <div class="col-12 text-center text-white">
+                <h1 class="display-2 fw-bold mb-4 fade-in">
+                    Your Health,<br>
+                    <span class="hero-gradient-text">Predicted & Protected</span>
+                </h1>
+                <p class="lead mb-5 px-lg-5 fade-in-delay">
+                    Advanced AI-powered health predictions to help you make informed decisions about your wellbeing
+                </p>
+
+                <div
+                    class="d-flex flex-column flex-sm-row gap-3 justify-content-center fade-in-delay-2 start_health_check">
+                    <a href="{{ url_for('login_bp.login' ) }}" class="text-decoration-none text-white">
+                        <button class="btn btn-hero btn-lg rounded-pill px-4 btn-outline-light">
+                            <i class="bi bi-play-circle me-2"></i>
+                            Start Health Check
+                        </button>
+                    </a>
+                    <a href="" class="text-decoration-none text-white">
+                        <button class="btn btn-outline-light btn-lg rounded-pill px-4">
+                            Chat Bot
+                            <i class="fa-solid fa-robot"></i>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-5 bg-light">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2 class="display-4 fw-bold text-primary mb-4 text-dark ">Available Health Services</h2>
+            <p class="lead text-muted mb-4 ">
+                Choose from our comprehensive suite of health prediction tools designed to help you understand your
+                health better
+            </p>
+
+            <div class="d-inline-block p-3 bg-success bg-opacity-10 rounded">
+                <span class="h3 fw-bold text-primary">2</span>
+                <span class="text-muted ms-2">Services Available</span>
+            </div>
+
+        </div>
+
+
+        <div class="services-grid">
+            <div class="card  card-hover" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='img/service/bmi.png') }}" class="card-img-top img-fluid" alt="BMI">
+                <div class="card-body">
+                    <h5 class="card-title ">BMI</h5>
+                    <p class="card-text ">Calculate your Body Mass Index and get personalized
+                                    health recommendations</p>
+                    <a href="{{ url_for('bmi_bp.BMI' ) }}" class="btn btn-primary">Check it out</a>
+                </div>
+            </div>
+
+            <div class="card  card-hover" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='img/image.png') }}" class="card-img-top img-fluid" alt="Heart Health">
+                <div class="card-body">
+                    <h5 class="card-title">Heart Attack Analysis</h5>
+                    <p class="card-text">Monitor and analyze your heart rate patterns for cardiovascular health insights  </p>
+                    <a href="{{ url_for('heart_bp.heart_attack' ) }}" class="btn btn-primary">Check it out</a>
+                </div>
+            </div>
+
+            <div class="card  card-hover" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='img/image.png') }}" class="card-img-top img-fluid" alt="Heart Health">
+                <div class="card-body">
+                    <h5 class="card-title">Diabetes Analysis</h5>
+                    <p class="card-text">Diabetes risk assessment and management tools to help you stay healthy</p>
+                    <a href="{{ url_for('diabetes_bp.diabetes' ) }}" class="btn btn-primary">Check it out</a>
+                </div>
+            </div>
+
+            <div class="card  card-hover" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='img/image.png') }}" class="card-img-top img-fluid" alt="Heart Health">
+                <div class="card-body">
+                    <h5 class="card-title">Cancer Analysis</h5>
+                    <p class="card-text">Diabetes risk assessment and management tools to help you stay healthy</p>
+                    <a href="{{ url_for('diabetes_bp.diabetes' ) }}" class="btn btn-primary">Check it out</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section id="how-it-works" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-4 fw-bold text-primary mb-4">How It Works</h2>
+            <p class="lead text-muted">Our simple 4-step process makes health prediction accessible and actionable
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="how-it-works-card">
+                    <div class="step-icon bg-gradient-primary">
+                        <i class="bi bi-clipboard-data"></i>
+                    </div>
+                    <h5 class="fw-bold mt-3">Input Your Data</h5>
+                    <p class="text-muted">Provide your health information through our secure, easy-to-use forms</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="how-it-works-card">
+                    <div class="step-icon bg-gradient-primary">
+                        <i class="bi bi-cpu"></i>
+                    </div>
+                    <h5 class="fw-bold mt-3">AI Analysis</h5>
+                    <p class="text-muted">Our advanced algorithms analyze your data using medical research and
+                        patterns</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="how-it-works-card">
+                    <div class="step-icon bg-gradient-primary">
+                        <i class="bi bi-graph-up"></i>
+                    </div>
+                    <h5 class="fw-bold mt-3">Get Predictions</h5>
+                    <p class="text-muted">Receive accurate health predictions and risk assessments</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="how-it-works-card">
+                    <div class="step-icon bg-gradient-primary">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h5 class="fw-bold mt-3">Take Action</h5>
+                    <p class="text-muted">Get personalized recommendations to improve your health outcomes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<script>
+  setTimeout(() => {
+    document.querySelectorAll('.flash-popup').forEach((popup) => {
+      popup.style.animation = "popup-hide 0.5s forwards";
+      setTimeout(() => popup.remove(), 500);
+    });
+  }, 2000);
+</script>
+
+{% endblock %}

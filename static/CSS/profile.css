@@ -1,0 +1,102 @@
+/* -------- Profile Container -------- */
+
+section{
+    margin-top: 100px;
+}
+.profile-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.profile-container:hover {
+    transform: translateY(-3px);
+}
+
+/* Heading */
+.profile-container h2 {
+    margin-bottom: 25px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+}
+
+/* -------- Profile Details -------- */
+.profile-details {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.profile-details p {
+    font-size: 18px;
+    margin-bottom: 12px;
+    padding: 10px 15px;
+    background: #f7f8fc;
+    border-radius: 10px;
+    border-left: 5px solid #007bff;
+    transition: background 0.2s ease;
+}
+
+.profile-details p:hover {
+    background: #eef2ff;
+}
+
+.profile-details strong {
+    color: #222;
+}
+
+/* -------- Logout Button -------- */
+.profile-container a.btn {
+    background: linear-gradient(135deg, #007bff, #0056d6);
+    color: #fff !important;
+    border: none;
+    padding: 12px 25px;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+.profile-container a.btn:hover {
+    background: linear-gradient(135deg, #0056d6, #0040a8);
+    transform: translateY(-2px);
+}
+
+/* -------- Responsive -------- */
+@media (max-width: 768px) {
+    .profile-container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .profile-details p {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+
+    .profile-container h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-container {
+        margin: 15px;
+        padding: 18px;
+    }
+
+    .profile-details p {
+        font-size: 15px;
+    }
+
+    .profile-container h2 {
+        font-size: 22px;
+    }
+}

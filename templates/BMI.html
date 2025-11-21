@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Service | BMI{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/bmi.css') }}">
+
+<body>
+ 
+  <div class="contaier">
+    <h1>BMI Calculator</h1>
+    <form method="POST" action="/BMI">
+      <div class="mb-3">
+        <label for="weight" class="form-label">Weight (kg):</label>
+        <input type="number" class="form-control" id="weight" name="weight" required>
+      </div>
+      <div class="mb-3">
+        <label for="height" class="form-label">Height (cm):</label>
+        <input type="number" class="form-control" id="height" name="height" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Calculate BMI</button>
+    </form>
+    
+    <h2>Your BMI: {{ person_bmi[0] }}</h2>
+    <p>{{ person_bmi[1] }}</p>
+    
+  </div>
+  </body>
+  {%endblock%}
+ 

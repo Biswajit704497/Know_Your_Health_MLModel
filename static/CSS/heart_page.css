@@ -1,0 +1,88 @@
+/* Page-level background and form styles (hero-like) */
+
+
+
+/* A centered card style for pages that need a form */
+.box2{
+    max-width: 920px;
+    margin: 5.5rem auto 4rem;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border: 1px solid var(--card-border);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(2,6,23,0.6);
+}
+
+.box2 h1{
+    margin-bottom: 0.25rem;
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.box2 p{
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 1rem;
+}
+
+/* Input styles inside .box2 */
+.box2 .input-box{
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 0.9rem;
+}
+
+.box2 label{
+    color: rgba(255,255,255,0.8);
+    font-weight: 600;
+    font-size: .95rem;
+}
+
+.box2 input[type="number"],
+.box2 select{
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    color: var(--text-soft);
+    padding: 0.6rem 0.75rem;
+    border-radius: 8px;
+    outline: none;
+}
+
+.box2 input[type="number"]:focus,
+.box2 select:focus{
+    box-shadow: 0 6px 24px rgba(14,165,233,0.08);
+    border-color: rgba(14,165,233,0.65);
+}
+
+.box2 input[type="submit"]{
+    background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+    border: none;
+    color: white;
+    padding: 0.7rem 1.25rem;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.box2 input[type="submit"]:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(14,165,233,0.12);
+}
+
+/* Responsive: make inputs wrap nicely */
+@media (min-width: 900px){
+    .box2 .input-grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 899px){
+    .box2{
+        margin: 6rem 1rem 3rem;
+        padding: 1.25rem;
+    }
+}
+
