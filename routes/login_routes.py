@@ -20,7 +20,7 @@ def login():
             cur = mysql.connect.cursor()
             cur.execute("SELECT * FROM user WHERE username=%s AND password=%s", (username, password))
             user = cur.fetchone()
-            cur.close()
+            
             # print("database reply",user)
             
             if user:
@@ -33,6 +33,8 @@ def login():
         except Exception as e:
             flash("Database connection problem: " + str(e), "danger")
 
+        finally:
+            cur.close()
     return render_template('login.html')    
 
 @login_bp.route('/logout')

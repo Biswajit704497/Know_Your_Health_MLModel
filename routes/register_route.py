@@ -35,8 +35,7 @@ def register():
             return redirect(url_for("login_bp.login"))
         except Exception as e:
             flash("database connection probleam",e)
-        
-
-        
-
+        finally:
+            cur.close()
+            conn.close()
     return render_template('register.html')
