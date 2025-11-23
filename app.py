@@ -10,7 +10,7 @@ from routes.user_profile import profile_bp
 import os
 from db_config import init_mysql
 
-app = Flask(__name__)
+app = Flask(__name__,static_folder='static')
 app.secret_key = "asasacddf1f2d15f4d5f5d4f55454212143@d4s5d4as" 
 
 
