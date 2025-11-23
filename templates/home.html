@@ -2,9 +2,9 @@
 
 {% block title %} Home {% endblock %}
 {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/hear_page.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/hear_page.css') }}">
 
 <div id="flash-popup-container">
   {% with messages = get_flashed_messages(with_categories=true) %}
@@ -19,27 +19,25 @@
 </div>
 <!-- Hero Section -->
 <section id="home" class="hero-section">
-
     <div class="container">
-        <div class="row min-vh-100 align-items-center">
+        <div class="row hero-content align-items-center">
             <div class="col-12 text-center text-white">
-                <h1 class="display-2 fw-bold mb-4 fade-in">
+                <h1 class="hero-title fade-in">
                     Your Health,<br>
                     <span class="hero-gradient-text">Predicted & Protected</span>
                 </h1>
-                <p class="lead mb-5 px-lg-5 fade-in-delay">
+                <p class="hero-subtitle fade-in-delay">
                     Advanced AI-powered health predictions to help you make informed decisions about your wellbeing
                 </p>
-
-                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center fade-in-delay-2 start_health_check">
+                <div class="hero-buttons fade-in-delay-2">
                     <a href="{{ url_for('login_bp.login' ) }}" class="text-decoration-none text-white">
-                        <button class="btn btn-hero btn-lg rounded-pill px-4 btn-outline-light">
+                        <button class="btn btn-hero rounded-pill">
                             <i class="bi bi-play-circle me-2"></i>
                             Start Health Check
                         </button>
                     </a>
                     <a href="" class="text-decoration-none text-white">
-                        <button class="btn btn-outline-light btn-lg rounded-pill px-4">
+                        <button class="btn btn-outline-light rounded-pill">
                             <i class="fa-solid fa-robot me-2"></i>
                             Chat Bot
                         </button>
@@ -51,21 +49,17 @@
 </section>
 
 <!-- Services Section -->
-<section id="services" class="py-5 bg-light">
+<section id="services" class="services-section bg-light">
     <div class="container">
-
-        <div class="text-center mb-5">
-            <h2 class="display-4 fw-bold text-primary mb-4 text-dark ">Available Health Services</h2>
-            <p class="lead text-muted mb-4 ">
-                Choose from our comprehensive suite of health prediction tools designed to help you understand your
-                health better
+        <div class="text-center services-header">
+            <h2 class="services-title">Available Health Services</h2>
+            <p class="services-subtitle">
+                Choose from our comprehensive suite of health prediction tools designed to help you understand your health better
             </p>
-
-            <div class="d-inline-block p-3 bg-success bg-opacity-10 rounded">
-                <span class="h3 fw-bold text-primary">4</span>
-                <span class="text-muted ms-2">Services Available</span>
+            <div class="services-badge">
+                <span class="services-count">4</span>
+                <span class="services-label">Services Available</span>
             </div>
-
         </div>
 
 
@@ -111,12 +105,11 @@
 </section>
 
 <!-- How It Works Section -->
-<section id="how-it-works" class="py-5">
+<section id="how-it-works" class="how-it-works-section">
     <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="display-4 fw-bold text-primary mb-4">How It Works</h2>
-            <p class="lead text-muted">Our simple 4-step process makes health prediction accessible and actionable
-            </p>
+        <div class="text-center how-it-works-header">
+            <h2 class="how-it-works-title">How It Works</h2>
+            <p class="how-it-works-subtitle">Our simple 4-step process makes health prediction accessible and actionable</p>
         </div>
 
         <div class="row g-4">

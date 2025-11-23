@@ -15,6 +15,7 @@ def login():
         username = request.form.get('username')
         password = request.form.get('password')
 
+        cur = None
         try:
 
             cur = mysql.connect.cursor()
@@ -31,16 +32,16 @@ def login():
                 flash("Invalid username or password", "danger")
 
         except Exception as e:
-            flash("Database connection problem: " + str(e), "danger")
+            flash("Database connection problem: " + str(e), "error")
 
         finally:
-            cur.close()
+            pass
     return render_template('login.html')    
 
 @login_bp.route('/logout')
 def logout():
     session.pop('user', None)
-    flash("Logout...... ")
+    flash("Logout...... ", "success")
     return redirect(url_for('main_bp.home'))
 
 
