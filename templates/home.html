@@ -29,8 +29,7 @@
                     Advanced AI-powered health predictions to help you make informed decisions about your wellbeing
                 </p>
 
-                <div
-                    class="d-flex flex-column flex-sm-row gap-3 justify-content-center fade-in-delay-2 start_health_check">
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center fade-in-delay-2 start_health_check">
                     <a href="{{ url_for('login_bp.login' ) }}" class="text-decoration-none text-white">
                         <button class="btn btn-hero btn-lg rounded-pill px-4 btn-outline-light">
                             <i class="bi bi-play-circle me-2"></i>
@@ -39,8 +38,8 @@
                     </a>
                     <a href="" class="text-decoration-none text-white">
                         <button class="btn btn-outline-light btn-lg rounded-pill px-4">
+                            <i class="fa-solid fa-robot me-2"></i>
                             Chat Bot
-                            <i class="fa-solid fa-robot"></i>
                         </button>
                     </a>
                 </div>
@@ -61,7 +60,7 @@
             </p>
 
             <div class="d-inline-block p-3 bg-success bg-opacity-10 rounded">
-                <span class="h3 fw-bold text-primary">2</span>
+                <span class="h3 fw-bold text-primary">4</span>
                 <span class="text-muted ms-2">Services Available</span>
             </div>
 
@@ -69,27 +68,26 @@
 
 
         <div class="services-grid">
-            <div class="card  card-hover" style="width: 18rem;">
+            <div class="card card-hover">
                 <img src="{{ url_for('static', filename='img/service/bmi.png') }}" class="card-img-top img-fluid" alt="BMI">
                 <div class="card-body">
-                    <h5 class="card-title ">BMI</h5>
-                    <p class="card-text ">Calculate your Body Mass Index and get personalized
-                                    health recommendations</p>
+                    <h5 class="card-title">BMI</h5>
+                    <p class="card-text">Calculate your Body Mass Index and get personalized health recommendations</p>
                     <a href="{{ url_for('bmi_bp.BMI' ) }}" class="btn btn-primary">Check it out</a>
                 </div>
             </div>
 
-            <div class="card  card-hover" style="width: 18rem;">
+            <div class="card card-hover">
                 <img src="{{ url_for('static', filename='img/image.png') }}" class="card-img-top img-fluid" alt="Heart Health">
                 <div class="card-body">
                     <h5 class="card-title">Heart Attack Analysis</h5>
-                    <p class="card-text">Monitor and analyze your heart rate patterns for cardiovascular health insights  </p>
+                    <p class="card-text">Monitor and analyze your heart rate patterns for cardiovascular health insights</p>
                     <a href="{{ url_for('heart_bp.heart_attack' ) }}" class="btn btn-primary">Check it out</a>
                 </div>
             </div>
 
-            <div class="card  card-hover" style="width: 18rem;">
-                <img src="{{ url_for('static', filename='img/image.png') }}" class="card-img-top img-fluid" alt="Heart Health">
+            <div class="card card-hover">
+                <img src="{{ url_for('static', filename='img/image.png') }}" class="card-img-top img-fluid" alt="Diabetes">
                 <div class="card-body">
                     <h5 class="card-title">Diabetes Analysis</h5>
                     <p class="card-text">Diabetes risk assessment and management tools to help you stay healthy</p>
@@ -97,11 +95,11 @@
                 </div>
             </div>
 
-            <div class="card  card-hover" style="width: 18rem;">
-                <img src="{{ url_for('static', filename='img/image.png') }}" class="card-img-top img-fluid" alt="Heart Health">
+            <div class="card card-hover">
+                <img src="{{ url_for('static', filename='img/image.png') }}" class="card-img-top img-fluid" alt="Cancer">
                 <div class="card-body">
                     <h5 class="card-title">Cancer Analysis</h5>
-                    <p class="card-text">Diabetes risk assessment and management tools to help you stay healthy</p>
+                    <p class="card-text">Early cancer risk assessment and screening tools to help you stay proactive about your health</p>
                     <a href="{{ url_for('diabetes_bp.diabetes' ) }}" class="btn btn-primary">Check it out</a>
                 </div>
             </div>
