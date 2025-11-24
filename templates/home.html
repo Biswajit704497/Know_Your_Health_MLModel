@@ -9,13 +9,13 @@
 
 <div id="flash-popup-container">
   {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-      {% for category, message in messages %}
-        <div class="flash-popup {{ category }}">
-          {{ message }}
-        </div>
-      {% endfor %}
-    {% endif %}
+  {% if messages %}
+  {% for category, message in messages %}
+  <div class="flash-popup {{ category }}">
+    {{ message }}
+  </div>
+  {% endfor %}
+  {% endif %}
   {% endwith %}
 </div>
 
@@ -23,13 +23,11 @@
   <div class="container">
     <div class="hero-grid">
       <div class="hero__body">
-        <p class="eyebrow fade-in">Know Your Health</p>
+        
         <h1 class="hero__title fade-in">
-          Predictive care that keeps you <span>three steps ahead</span>
+            Your Health,<span>Predicted & Protected</span>
         </h1>
-        <p class="hero__subtitle fade-in-delay">
-          Onboard, screen, and monitor across BMI, diabetes, heart, and cancer flows—built with clinical datasets and tuned for mobile sharing.
-        </p>
+        
         <div class="hero__actions fade-in-delay-2">
           <a href="{{ url_for('login_bp.login') }}" class="btn btn-primary hero__cta">
             <i class="bi bi-shield-check me-2"></i>
