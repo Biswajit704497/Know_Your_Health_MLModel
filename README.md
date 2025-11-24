@@ -1,6 +1,6 @@
 # 🧪 Quick Lab  
 A simple health prediction web application built with **Flask**. Quick Lab provides easy-to-use health services like **BMI Calculation** and **Heart Attack Risk Prediction** and **more**.  
-- Live Link - https://heart-attack-prediction-model.onrender.com/#home
+- Live Link - https://quick-lab.onrender.com/
 ---
 
 ## 📌 Features
