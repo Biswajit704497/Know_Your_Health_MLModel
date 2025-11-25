@@ -5,6 +5,9 @@
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
 }
 
 .navbar.scrolled {
@@ -215,8 +218,12 @@
     }
     
     .nav-link {
-        font-size: 0.95rem;
-        padding: 0.65rem 1.25rem !important;
+        font-size: 0.9rem;
+        padding: 0.55rem 1rem !important;
+    }
+    
+    .navbar .container {
+        padding: 0 0.75rem;
     }
 }
 
