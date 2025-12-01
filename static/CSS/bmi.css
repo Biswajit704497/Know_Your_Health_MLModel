@@ -1,0 +1,167 @@
+/* BMI Page Styles - Responsive */
+
+:root {
+    --card-border: rgba(255, 255, 255, 0.1);
+    --accent-start: #3b82f6;
+    --accent-end: #8b5cf6;
+    --text-soft: rgba(255, 255, 255, 0.8);
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* A centered card style for pages that need a form */
+.box2 {
+    max-width: 920px;
+    margin: clamp(2rem, 6vw, 5.5rem) auto clamp(2rem, 4vw, 4rem);
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border: 1px solid var(--card-border);
+    padding: clamp(1.5rem, 4vw, 2rem);
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(2,6,23,0.6);
+}
+
+.box2 h1 {
+    margin-bottom: 0.25rem;
+    color: #fff;
+    font-size: clamp(1.25rem, 5vw, 1.6rem);
+    font-weight: 700;
+}
+
+.box2 p {
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.5;
+}
+
+/* Input styles inside .box2 */
+.box2 .input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 0.9rem;
+}
+
+.box2 label {
+    color: rgba(255,255,255,0.8);
+    font-weight: 600;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+}
+
+.box2 input[type="number"],
+.box2 select {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    color: var(--text-soft);
+    padding: clamp(0.5rem, 2vw, 0.75rem) clamp(0.6rem, 2vw, 0.75rem);
+    border-radius: 8px;
+    outline: none;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    width: 100%;
+}
+
+.box2 input[type="number"]:focus,
+.box2 select:focus {
+    box-shadow: 0 6px 24px rgba(14,165,233,0.08);
+    border-color: rgba(14,165,233,0.65);
+}
+
+.box2 input[type="submit"] {
+    background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+    border: none;
+    color: white;
+    padding: clamp(0.6rem, 2vw, 0.7rem) clamp(1rem, 3vw, 1.25rem);
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.box2 input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(14,165,233,0.12);
+}
+
+.box2 input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Responsive: make inputs wrap nicely */
+@media (min-width: 900px) {
+    .box2 .input-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 899px) {
+    .box2 {
+        margin: clamp(2rem, 4vw, 3rem) 1rem;
+        padding: clamp(1rem, 3vw, 1.25rem);
+    }
+}
+
+@media (max-width: 576px) {
+    .box2 {
+        margin: clamp(1.5rem, 3vw, 2rem) 0.75rem;
+        padding: clamp(1rem, 2vw, 1.25rem);
+    }
+    
+    .box2 h1 {
+        font-size: clamp(1.1rem, 4vw, 1.4rem);
+    }
+    
+    .box2 input[type="number"],
+    .box2 select,
+    .box2 input[type="submit"] {
+        width: 100%;
+    }
+}
+
+/* Flash popup styling */
+#flash-popup-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+}
+
+.flash-popup {
+    padding: 14px 20px;
+    min-width: 220px;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    transform: translateX(50px);
+    animation: popup-slide 0.5s ease-out forwards;
+}
+
+.success { background: linear-gradient(135deg, #28d17c, #1ea35a); }
+.error   { background: linear-gradient(135deg, #ff4e50, #c81d25); }
+.warning { background: linear-gradient(135deg, #ffcc00, #ff9900); }
+.info    { background: linear-gradient(135deg, #3a8cff, #005ce6); }
+
+@keyframes popup-slide {
+    0%   { opacity: 0; transform: translateX(50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes popup-hide {
+    0%   { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(50px); }
+}

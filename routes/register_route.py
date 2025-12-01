@@ -4,6 +4,10 @@ from db_config import mysql
 @register_bp.route('/register',methods=['GET','POST'])
 def register():
 
+    if 'user' in session:
+        flash("Your acount already axist", "warning")
+        return redirect(url_for('main_bp.home'))
+
     if request.method == 'POST':
         email = request.form.get("email")
         phone_number = request.form.get("phone_number")

@@ -1,14 +1,14 @@
-body {
+ section {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(90deg, #ff3c3c, #7d00ff, #0026ff);
   background-size: 300% 300%;
   animation: rgbMove 6s infinite alternate;
-
-}
+  padding: 1rem;
+} 
 
 
 /* optional animation for smooth RGB transition */
@@ -24,7 +24,7 @@ body {
 .login-box {
    margin: 3rem 1rem;
   background-color: rgba(0, 0, 0, 0.85);
-  padding: 32px;
+  padding: clamp(1.5rem, 5vw, 2rem);
   border-radius: 15px;
   text-align: center;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
@@ -43,10 +43,10 @@ form input{
     text-align: center;
     width: 100%;
     max-width: 420px;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
     border: none;
     outline: none;
-    padding: 10px 14px;
+    padding: clamp(0.6rem, 2vw, 0.75rem) clamp(0.85rem, 2vw, 1rem);
     background: transparent;
     color: white;
     border: 2px solid transparent;
@@ -56,14 +56,19 @@ form input{
     border-radius: 30px;
     display: block;
     margin: 0.45rem auto;
+    transition: box-shadow 0.3s ease;
+}
+
+form input:focus {
+    box-shadow: 0 0 20px rgba(255, 60, 60, 0.3);
 }
 input::placeholder {
   color: #aaa;
 }
 form .button{
   margin-top: 18px;
-  padding: 10px 36px; 
-  font-size: 1.05rem;
+  padding: clamp(0.6rem, 2vw, 0.75rem) clamp(1.5rem, 5vw, 2.5rem); 
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
   border: none;
   outline: none;
   cursor: pointer;
@@ -72,17 +77,39 @@ form .button{
   background: linear-gradient(90deg, #ff3c3c, #7d00ff, #0026ff);
   border: 0;
   display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 600;
+}
+
+form .button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+form .button:active {
+  transform: translateY(0);
 }
 
 /* Make inputs and button full width on small screens */
 @media (max-width: 420px){
-  .login-box{ padding: 18px; margin: 2rem .5rem; }
-  form input{ max-width: 100%; }
-  form .button{ width: 100%; padding: 10px 12px; }
+  .login-box{ 
+    padding: clamp(1rem, 4vw, 1.25rem); 
+    margin: 1rem 0.5rem; 
+  }
+  form input{ 
+    max-width: 100%; 
+    margin: 0.5rem 0;
+  }
+  form .button{ 
+    width: 100%; 
+    padding: clamp(0.6rem, 2vw, 0.7rem) clamp(1rem, 3vw, 1.5rem); 
+  }
 }
 
 @media (max-width: 768px){
-  .login-box{ margin: 2.5rem 1rem; }
+  .login-box{ 
+    margin: 2.5rem 1rem; 
+  }
 }
   
 #flash-popup-container {

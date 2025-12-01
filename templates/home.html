@@ -33,7 +33,7 @@
             <i class="bi bi-shield-check me-2"></i>
             Launch Assessment
           </a>
-          <a href="{{ url_for('heart_bp.heart_attack') }}" class="btn hero__ghost">
+          <a href="" class="btn hero__ghost">
             <i class="bi bi-robot me-2"></i>
             Try Health Bot
           </a>
@@ -53,30 +53,7 @@
           </div>
         </div>
       </div>
-      <div class="hero__panel fade-in-delay">
-        <div class="hero-card">
-          <header>
-            <p class="hero-card__label">Today’s Summary</p>
-            <span class="hero-card__badge">Synced</span>
-          </header>
-          <div class="hero-card__stats">
-            <div>
-              <p class="hero-card__title">Heart Stability</p>
-              <strong>Low Risk</strong>
-              <small>HRV steady • BP optimal</small>
-            </div>
-            <div>
-              <p class="hero-card__title">Glucose Trend</p>
-              <strong>In Range</strong>
-              <small>Last reading 94 mg/dL</small>
-            </div>
-          </div>
-          <div class="hero-card__cta">
-            <p>Continue with your next screening to keep insights refreshed.</p>
-            <a href="{{ url_for('diabetes_bp.diabetes') }}">Schedule diabetes scan →</a>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
 </section>
@@ -103,9 +80,9 @@
 <section id="services" class="section services">
   <div class="container">
     <div class="section-heading">
-      <p class="section-heading__eyebrow">Health toolkit</p>
+     
       <h2 class="section-heading__title">
-        Four predictive flows. One calming dashboard.
+        Our Health Predict Model
       </h2>
       <p class="section-heading__subtitle">
         Launch the module you need and follow the guided steps to get verified results in minutes.
@@ -117,9 +94,8 @@
         <div class="service-card__badge">BMI</div>
         <h3>Body balance insight</h3>
         <p>Track BMI alongside muscle-to-fat ratio benchmarks and get coaching cues tailored to your day.</p>
-        <a href="{{ url_for('bmi_bp.BMI') }}">Open BMI flow</a>
+        <a href="{{ url_for('bmi_bp.BMI') }}" >Open BMI flow</a>
       </article>
-
       <article class="service-card" data-theme="primary">
         <div class="service-card__badge">Heart</div>
         <h3>Heart attack analysis</h3>
@@ -147,9 +123,8 @@
 <section id="how-it-works" class="section journey">
   <div class="container">
     <div class="section-heading">
-      <p class="section-heading__eyebrow">How it works</p>
       <h2 class="section-heading__title">A calm path from input to insight</h2>
-      <p class="section-heading__subtitle">Every step uses the same color palette to keep focus and trust.</p>
+      <p class="section-heading__subtitle"></p>
     </div>
 
     <div class="journey__timeline">
@@ -187,7 +162,7 @@
       </div>
       <div class="cta-card__actions">
         <a href="{{ url_for('login_bp.login') }}" class="btn btn-primary hero__cta">Sign in</a>
-        <a href="{{ url_for('login_bp.login') }}" class="btn hero__ghost">Create account</a>
+        <a href="{{ url_for('register_bp.register') }}" class="btn hero__ghost">Create account</a>
       </div>
     </div>
   </div>
