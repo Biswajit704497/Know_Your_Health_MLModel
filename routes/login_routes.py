@@ -38,6 +38,9 @@ def login():
             pass
     return render_template('login.html')    
 
+
+
+
 @login_bp.route('/logout')
 def logout():
     session.pop('user', None)

@@ -7,7 +7,10 @@ from routes.login_routes import login_bp
 from routes.register_route import register_bp
 from routes.diabetes_routes import diabetes_bp
 from routes.user_profile import profile_bp
+from routes.google_auth import google_auth
 import os
+import requests
+
 from db_config import init_mysql
 
 app = Flask(__name__,static_folder='static')
@@ -24,6 +27,7 @@ app.register_blueprint(login_bp)
 app.register_blueprint(register_bp)
 app.register_blueprint(diabetes_bp)
 app.register_blueprint(profile_bp)
+app.register_blueprint(google_auth)
 
 @app.route("/db_test")
 def db_test():
